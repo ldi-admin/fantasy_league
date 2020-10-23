@@ -50,6 +50,18 @@ flutter:
      - Assests/Images/team2.png
      - Assests/Images/team3.png
      - Assests/Images/team4.png
+     - Assests/Images/small highlight1.png
+     - Assests/Images/small highlight2.png
+     - Assests/Images/small highlight3.png
+     - Assests/Images/small highlight4.png
+     - Assests/Images/small highlight5.png
+     - Assests/Images/small highlight6.png
+     - Assests/Images/2small highlight1.png
+     - Assests/Images/2small highlight2.png
+     - Assests/Images/2small highlight3.png
+     - Assests/Images/Highlight.png
+     - Assests/Images/article.png
+     - Assests/Images/team header.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

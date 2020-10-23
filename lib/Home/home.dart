@@ -1,6 +1,8 @@
 import 'package:fanstasy_league/Home/Standings.dart';
 import 'package:flutter/material.dart';
 
+import 'News Feed.dart';
+
 class home extends StatefulWidget {
   @override
   _homeState createState() => _homeState();
@@ -45,7 +47,7 @@ class _homeState extends State<home> {
 
         body: TabBarView(
           children: [
-            Text("AA"),
+            NewsFeed(),
             standings()
           ],
         ),
