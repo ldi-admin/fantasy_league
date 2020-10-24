@@ -9,6 +9,7 @@ class _standingsState extends State<standings> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xffE7E2E1),
       body: Container(
         child: ListView.builder(itemBuilder:(context,index){
           return Team(
@@ -40,7 +41,7 @@ class Team extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      margin: EdgeInsets.only(top: 25),
+      margin: EdgeInsets.only(top: 10),
       padding: EdgeInsets.symmetric(horizontal: 20),
       height: 90,
       decoration: BoxDecoration(

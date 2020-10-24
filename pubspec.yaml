@@ -62,6 +62,26 @@ flutter:
      - Assests/Images/Highlight.png
      - Assests/Images/article.png
      - Assests/Images/team header.png
+     - Assests/Images/bt_secondary.png
+     - Assests/Images/LA logo.png
+     - Assests/Images/profile1.png
+     - Assests/Images/profile2.png
+     - Assests/Images/profile3.png
+     - Assests/Images/profile4.png
+     - Assests/Images/profile5.png
+     - Assests/Images/profile6.png
+     - Assests/Images/profile7.png
+     - Assests/Images/profile8.png
+     - Assests/Images/Repeat Grid 16.png
+     - Assests/Images/Line1.png
+     - Assests/Images/Line2.png
+     - Assests/Images/Line3.png
+     - Assests/Images/Line4.png
+     - Assests/Images/Line5.png
+     - Assests/Images/Line6.png
+     - Assests/Images/Line7.png
+
+
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

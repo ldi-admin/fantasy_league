@@ -1,3 +1,4 @@
+import 'package:fanstasy_league/Team/List.dart';
 import 'package:flutter/material.dart';
 
 class team extends StatefulWidget {
@@ -27,7 +28,7 @@ class _teamState extends State<team> {
           ),
           body: TabBarView(
             children: [
-              Text("A"),
+             ListsPlayer(),
               Text("A")
             ],
           ),

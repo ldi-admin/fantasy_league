@@ -12,6 +12,7 @@ class _NewsFeedState extends State<NewsFeed> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xffE7E2E1),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(
