@@ -80,6 +80,9 @@ flutter:
      - Assests/Images/Line5.png
      - Assests/Images/Line6.png
      - Assests/Images/Line7.png
+     - Assests/Images/Field.png
+     - Assests/Images/player field.png
+     - Assests/Images/matchup header.png
 
 
   #   - images/a_dot_ham.jpeg

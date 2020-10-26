@@ -85,26 +85,25 @@ class PlayerStat extends StatelessWidget {
       color: Colors.black
       ,
       height:100,
-      margin: EdgeInsets.only(top:10,left: 10,right: 10),
+      margin: EdgeInsets.only(top:10,left: 10,right: 15),
 
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(this.Name,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 14,color: Colors.white),),
-          RichText(textAlign: TextAlign.start,
-              text:  TextSpan(text: "MTL  C,LW",style: TextStyle(fontSize: 12,color: Colors.white38,),)
+          Padding(
+            padding: const EdgeInsets.only(top:8.0),
+            child: RichText(textAlign: TextAlign.start,
+                text:  TextSpan(text: "MTL  C,LW",style: TextStyle(fontSize: 12,color: Colors.white60,),)
+            ),
           ),
 
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Image(image: AssetImage(this.Photo),fit: BoxFit.cover,height: 5,),
+              Image(image: AssetImage(this.Photo),fit: BoxFit.cover,height: 8,),
               Container(
-
-                height: 60,
-                width: 60,
-
                 child: Center(child: Text(this.Score,style: TextStyle(color: Colors.white,fontSize: 20),)),
               ),
             ],
@@ -114,3 +113,4 @@ class PlayerStat extends StatelessWidget {
     );
   }
 }
+

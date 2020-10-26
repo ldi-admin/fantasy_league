@@ -23,11 +23,9 @@ class _ListsPlayerState extends State<ListsPlayer> {
           children: <Widget>[
             Container(
               margin: EdgeInsets.symmetric(horizontal: 27,vertical: 15),
-height:50,
-
+                        height:50,
                      decoration: BoxDecoration(
                        borderRadius: BorderRadius.circular(12),
-
                        color: Colors.white,
                      ),
                      alignment: Alignment.center,
