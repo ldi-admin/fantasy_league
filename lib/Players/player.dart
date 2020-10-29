@@ -1,3 +1,4 @@
+import 'package:fanstasy_league/Player%20Compare/PlayerCompare.dart';
 import 'package:fanstasy_league/Players/PlayerList%20Stats.dart';
 import 'package:fanstasy_league/Team/List.dart';
 import 'package:flutter/cupertino.dart';
@@ -67,74 +68,75 @@ class _playerState extends State<player> {
                   style: TextStyle(fontSize: 14,color: Colors.black,fontWeight: FontWeight.w400),
                   itemHeight: 50,
                   value: _value,
-
                   items: [
                     DropdownMenuItem(
                       child: Text("TOP AVAILABLE PLAYERS",textAlign: TextAlign.end,style: TextStyle(fontSize: 12,fontWeight: FontWeight.w500,letterSpacing: 1)),
                       value: 1,
-                      onTap: (){
-
-
-                      },
                     ),
-                  ],
+                          DropdownMenuItem(
+                        child: Text("COMPARE PLAYERS",textAlign: TextAlign.end,style: TextStyle(fontSize: 12,fontWeight: FontWeight.w500,letterSpacing: 1)),
+                        value: 2,
+                          )],
                   isExpanded: true,
                   isDense: true,
                   onChanged: (value) {
                     setState(() {
                       _value = value;
-                      return showDialog(
-                        context: context,
-                        builder: (BuildContext context){return AlertDialog(
-                          backgroundColor: Colors.white38,
-                          scrollable: true,
-                          titlePadding: EdgeInsets.symmetric(horizontal: 5),
-                          elevation: 5,
+                      if (_value==1)
+                        {
+                          return showDialog(
+                            context: context,
+                            builder: (BuildContext context){return AlertDialog(
+                              backgroundColor: Colors.white38,
+                              scrollable: true,
+                              titlePadding: EdgeInsets.symmetric(horizontal: 5),
+                              elevation: 5,
+                              contentPadding:EdgeInsets.symmetric(horizontal: 0,vertical: 0),
+                              content: Center(
+                                child: Container(
+                                  height: 380,
+                                  width: 340,
+                                  child: Column(
+                                    children: [
+                                      Container(
+                                        height: 60,
+                                        color:Colors.redAccent ,
+                                        child: Row(
+                                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                          children: [
+                                            Text(" AVAILABLE PLAYERS TO TRADE",style: TextStyle(color: Colors.white,fontSize: 14,letterSpacing: 1),),
+                                            IconButton(icon: Icon(Icons.close),color: Colors.white,iconSize: 30, onPressed: (){
+                                              Navigator.pop(context,this);
+                                            })
+                                          ],
+                                        ),
+                                      ),
+                                      Container(
 
-                          contentPadding:EdgeInsets.symmetric(horizontal: 0,vertical: 0),
+                                        height: 320,
+                                        child: ListView.builder(itemBuilder: (context,index){
+                                          return PlayerStatCardChange(
+                                            pic: changeList[index].pic,
+                                            name: changeList[index].name,
+                                            owned: changeList[index].owned,
+                                            points: changeList[index].points,
+                                            average:changeList[index].average,
+                                            rank: changeList[index].rank,
 
-                          content: Center(
-                            child: Container(
-                              height: 380,
-                              width: 340,
-                              child: Column(
-                                children: [
-                                  Container(
-                                    height: 60,
-                                    color:Colors.redAccent ,
-                                    child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                      children: [
-                                        Text(" AVAILABLE PLAYERS TO TRADE",style: TextStyle(color: Colors.white,fontSize: 14,letterSpacing: 1),),
-                                        IconButton(icon: Icon(Icons.close),color: Colors.white,iconSize: 30, onPressed: (){
-                                          Navigator.pop(context,this);
-
-                                        })
-                                      ],
-                                    ),
+                                          );
+                                        },scrollDirection: Axis.vertical, itemCount: changeList.length,shrinkWrap: true,
+                                        ),
+                                      )
+                                    ],
                                   ),
-                                  Container(
-
-                                    height: 320,
-                                    child: ListView.builder(itemBuilder: (context,index){
-                                      return PlayerStatCardChange(
-                                        pic: changeList[index].pic,
-                                        name: changeList[index].name,
-                                        owned: changeList[index].owned,
-                                        points: changeList[index].points,
-                                        average:changeList[index].average,
-                                        rank: changeList[index].rank,
-
-                                      );
-                                    },scrollDirection: Axis.vertical, itemCount: changeList.length,shrinkWrap: true,
-                                    ),
-                                  )
-                                ],
+                                ),
                               ),
-                            ),
-                          ),
-                        );},
-                      );
+                            );},
+                          );
+                        }
+                        if(_value==2){
+                          Navigator.push(context, ScaleRoute(page: PlayerCompare()));
+                        }
                     });
                   }),
             ),padding: EdgeInsets.symmetric(horizontal: 20),
