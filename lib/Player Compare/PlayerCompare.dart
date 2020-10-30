@@ -406,9 +406,10 @@ class Compare extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      color: Colors.white,
       padding: EdgeInsets.symmetric(horizontal: 10),
-      margin: EdgeInsets.only(top:5),
-      height: 60,
+      margin: EdgeInsets.only(top:2),
+      height: 80,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -433,8 +434,8 @@ class Compare2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 10),
-      margin: EdgeInsets.only(top:5),
-      height: 60,
+      margin: EdgeInsets.only(top:2),
+      height:80,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

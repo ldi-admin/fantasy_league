@@ -1,4 +1,5 @@
 
+import 'package:fanstasy_league/Player%20Profile/PlayerProfile.dart';
 import 'package:fanstasy_league/Team/Points%20Distrubution.dart';
 import 'package:flutter/material.dart';
 
@@ -148,51 +149,55 @@ class PlayerCard extends StatelessWidget {
   PlayerCard({this.Photo,this.Name,this.Score});
   @override
   Widget build(BuildContext context) {
-    return Container(
-        color: Colors.white
-     ,
-      height:90,
-      margin: EdgeInsets.only(top:10,),
+    return GestureDetector(
+      onTap: (){
+        Navigator.push(context, ScaleRoute(page: PlayerProfile()));
+      },
+      child: Container(
+          color: Colors.white,
+        height:90,
+        margin: EdgeInsets.only(top:10,),
 
-      child: Row(
+        child: Row(
 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(left:5),
-            child: Image(image: AssetImage(this.Photo),width: 50,height: 50,fit: BoxFit.cover,),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left:10.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-             crossAxisAlignment: CrossAxisAlignment.start,
-             children: [
-
-               Text(this.Name,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 14),),
-               RichText(textAlign: TextAlign.start,
-                 text: TextSpan(text: "1st ",style: TextStyle(fontSize: 14,color: Colors.black,),children: <TextSpan>[
-                   TextSpan(text: " 14.33 ",style: TextStyle(fontSize: 14,color: Colors.black,),),
-                   TextSpan(text: " MTL vs LA",style: TextStyle(fontSize: 14,color: Colors.black54,),),
-                   TextSpan(text: "\n1G, 2A, 3 SOG",style: TextStyle(fontSize: 14,color: Colors.black54,),)
-                 ]),
-               ),
-             ],
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(left:5),
+              child: Image(image: AssetImage(this.Photo),width: 50,height: 50,fit: BoxFit.cover,),
             ),
-          ),
-          Container(
-            margin: EdgeInsets.only(left: 69),
-            height: 60,
-            width: 60,
-            alignment: Alignment.centerLeft,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(0),
-              color: Colors.black,
-            ),
+            Padding(
+              padding: const EdgeInsets.only(left:10.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+               crossAxisAlignment: CrossAxisAlignment.start,
+               children: [
 
-            child: Center(child: Text(this.Score,style: TextStyle(color: Colors.white,fontSize: 20),)),
-          )
-        ],
+                 Text(this.Name,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 14),),
+                 RichText(textAlign: TextAlign.start,
+                   text: TextSpan(text: "1st ",style: TextStyle(fontSize: 14,color: Colors.black,),children: <TextSpan>[
+                     TextSpan(text: " 14.33 ",style: TextStyle(fontSize: 14,color: Colors.black,),),
+                     TextSpan(text: " MTL vs LA",style: TextStyle(fontSize: 14,color: Colors.black54,),),
+                     TextSpan(text: "\n1G, 2A, 3 SOG",style: TextStyle(fontSize: 14,color: Colors.black54,),)
+                   ]),
+                 ),
+               ],
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(left: 69),
+              height: 60,
+              width: 60,
+              alignment: Alignment.centerLeft,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(0),
+                color: Colors.black,
+              ),
+
+              child: Center(child: Text(this.Score,style: TextStyle(color: Colors.white,fontSize: 20),)),
+            )
+          ],
+        ),
       ),
     );
   }

@@ -91,6 +91,9 @@ flutter:
      - Assests/Images/statchart1.png
      - Assests/Images/statchart2.png
      - Assests/Images/graph compare.png
+     - Assests/Images/playertop.png
+     - Assests/Images/playerHighlight2.png
+     - Assests/Images/playerHighlight1.png
 
 
   #   - images/a_dot_ham.jpeg
