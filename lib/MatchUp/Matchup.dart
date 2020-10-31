@@ -30,9 +30,6 @@ class _matchUpState extends State<matchUp> {
       backgroundColor: Color(0xffE7E2E1),
       body: SingleChildScrollView(
         child: Container(
-
-
-
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -77,16 +74,14 @@ class MatchUpCard extends StatelessWidget {
     return Container(
       height: 120,
       color: Colors.white,
-
+      padding: EdgeInsets.symmetric(horizontal: 15),
       margin: EdgeInsets.symmetric(vertical: 5),
-      padding: EdgeInsets.symmetric(horizontal:30),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
-            width: 150,
-            height: 100,
+            width: 110,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -101,30 +96,27 @@ class MatchUpCard extends StatelessWidget {
                 Container(
                   height: 35,
                   width: 35,
-
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     color: Colors.black,
                   ),
-
                   child: Center(child: Text(this.score,style: TextStyle(color: Colors.white,fontSize: 15),)),
                 )
               ],
-
             ),
           ),
           Container(
             height:120,
             color: Colors.black26,
-            width: 25,
+            width: 20,
             child: Center(child: Text(this.centerLetter,style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 25),),),
           ),
           Container(
-            width: 150,
-            height: 100,
+            width: 110,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               mainAxisAlignment: MainAxisAlignment.spaceAround,
+
               children: [
                 Text(this.name2,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 14),),
                 RichText(textAlign: TextAlign.start,

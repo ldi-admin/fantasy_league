@@ -2,10 +2,12 @@ import 'package:fanstasy_league/Home/News%20Feed.dart';
 import 'package:fanstasy_league/Home/Standings.dart';
 import 'package:fanstasy_league/Player%20Compare/PlayerCompare.dart';
 import 'package:fanstasy_league/Player%20Compare/PlayerCompareList.dart';
+import 'package:fanstasy_league/Team/List.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class PlayerProfile extends StatefulWidget {
+
   @override
   _PlayerProfileState createState() => _PlayerProfileState();
 }
@@ -42,7 +44,10 @@ class _PlayerProfileState extends State<PlayerProfile> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Container(
-                      child: FlatButton(onPressed: (){},
+                      child: FlatButton(
+                        onPressed: (){
+                          Navigator.push(context, ScaleRoute(page: PlayerCompare()));
+                        },
                         child:Container(
                           height: 50,
                           width: 150,
@@ -63,9 +68,9 @@ class _PlayerProfileState extends State<PlayerProfile> {
                               ),
                             ],
                           ),
-
                         ),
                       ),
+
                     ),
                     Container(
                       child: FlatButton(onPressed: (){},
@@ -135,7 +140,25 @@ class _PlayerProfileState extends State<PlayerProfile> {
                 height: 50,
                 width: 600,
                 child: FlatButton(
-                  onPressed: (){},
+                  onPressed: () {
+                    ///First Bottom Sheet
+                    showModalBottomSheet<void>(context: context, builder: (BuildContext context) {
+                      return Scaffold(
+                        appBar: AppBar(
+                          automaticallyImplyLeading: false,
+                          title:  Center(child: Text("STAT DETAILS",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white,fontSize: 16,wordSpacing: 1.2,letterSpacing: 0.8),)),
+                          backgroundColor: Colors.black,
+                        ),
+                        body: SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: Image(
+                              image: AssetImage("Assests/Images/stats proj.png"),fit: BoxFit.cover
+                          )
+                        ),
+                      );
+                    });
+                  },
+
                   splashColor: Colors.grey,
                   child: Text("STAT DETAILS",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white,fontSize: 16,wordSpacing: 1.2,letterSpacing: 0.8),),
                 ),
@@ -146,7 +169,81 @@ class _PlayerProfileState extends State<PlayerProfile> {
                 height: 50,
                 width: 600,
                 child: FlatButton(
-                  onPressed: (){},
+                  onPressed: (){
+                    ///Second Bottom Sheet
+                    showModalBottomSheet<void>(context: context, builder: (BuildContext context) {
+                      return  DefaultTabController(
+                        length: 3,
+                        child: Scaffold(
+                          appBar:  AppBar(
+                            automaticallyImplyLeading: false,
+                            backgroundColor: Colors.black,
+                            title: Text("PLAYER HISTORY",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white,fontSize: 16,wordSpacing: 1.2,letterSpacing: 0.8),),
+                            centerTitle: true,
+                            elevation: 0,
+                            bottom: TabBar(
+                              labelStyle:TextStyle(color: Colors.black) ,
+                              unselectedLabelColor: Colors.redAccent,
+                              unselectedLabelStyle: TextStyle(color: Colors.redAccent),
+                              isScrollable: true,
+                              indicatorSize: TabBarIndicatorSize.label,
+                              labelColor: Colors.black,
+                              indicator:  BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(10),
+                                  border: Border.all(color: Colors.black,)
+                              ),
+                              tabs: [
+                                Tab(child: Container(
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      border: Border.all(color: Colors.redAccent)),
+                                  width:120,
+                                  child: Align(
+                                    alignment: Alignment.center,
+                                    child: Text("AVG.PTS/GAME",),
+                                  ),
+                                ),
+                                ),
+                                Tab(child: Container(
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      border: Border.all(color: Colors.redAccent)),
+                                  width:120,
+                                  child: Align(
+                                    alignment: Alignment.center,
+                                    child: Text("TIME ON ICE"),
+                                  ),
+                                ),
+                                ),
+                                Tab(child: Container(
+                                    width: 120,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(10),
+                                        border: Border.all(color: Colors.redAccent)),
+                                    child: Align(
+                                        alignment: Alignment.center,
+                                        child: Text("+/-"))),)
+                              ],
+                            ),
+                          ),
+                          body: TabBarView(
+                              children: [
+                                Scaffold(
+                                  body: SingleChildScrollView(
+                                      scrollDirection: Axis.horizontal,
+                                      child: Image(
+                                        image: AssetImage("Assests/Images/graph compare.png"),fit: BoxFit.cover,
+                                      )
+                                  ),
+                                ),
+                                Text("AA"),
+                                Text("A")
+                              ]),
+                          backgroundColor: Colors.black,),
+                      );
+                    });
+                  },
                   splashColor: Colors.grey,
                   child: Text("PLAYER HISTORY",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white,fontSize: 16,wordSpacing: 1.2,letterSpacing: 0.8),),
                 ),
