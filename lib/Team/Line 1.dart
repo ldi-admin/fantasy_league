@@ -9,13 +9,10 @@ class _Line1State extends State<Line1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.transparent,
     body: Stack(
      children: [
-       Container(
-       decoration: BoxDecoration(
-           image: DecorationImage(image: AssetImage("Assests/Images/Field.png"),fit: BoxFit.cover)
-       )
-     ),
+
      SingleChildScrollView(
        child: Column(
         children: [

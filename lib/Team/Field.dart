@@ -12,7 +12,7 @@ class _FieldState extends State<Field> {
   Widget build(BuildContext context) {
     return DefaultTabController(length: 2,
       child: Scaffold(
-        extendBodyBehindAppBar: true,
+
         appBar:  AppBar(
             toolbarHeight:55,
             automaticallyImplyLeading: false,
@@ -32,6 +32,7 @@ class _FieldState extends State<Field> {
             tabs: [
                 Tab(child: Container(
                   decoration: BoxDecoration(
+
                       borderRadius: BorderRadius.circular(10),
                       border: Border.all(color: Colors.redAccent)),
                         width:120,
